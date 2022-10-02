@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    "use strict";
+    //Exercise 1:
+    function capsFirst(str){
+        let words = str.split(" ") //Gets all the words in a string
+
+        for (var x = 0; x < words.length; x++){
+            let caps = words[x].charAt(0).toUpperCase() //Takes first letter and converts it to uppercase
+            let word = words[x].slice(1) //Takes the rest of the word
+            words[x] = caps + word //Combines it to make a new word
+        }
+
+        let join = words.join(" ") //Concatenates the new words into a single string
+        return join
+    }
+
+    console.log(capsFirst("the quick brown fox")) //The Quick Brown Fox
+
+    //Exercise 2:
+    function max(num){
+        return Math.max(num) //Returns the largest number out of the given numbers
+    }
+
+    console.log(max(1,0,1)); // 1
+    console.log(max(0,-10,-20)); // 0 
+    console.log(max(1000,510,440)); // 1000
+
+
+    //Exercise 3:
+    function right(str){
+        if (str.length >= 3){ // If word's length is greater than 3 characters, performs the following
+            let word = str.slice(0, -3) //Takes the word except for the last 3 characters
+            let last = str.slice(-3) //Slices the last three characters of the word
+            return last + word // Concatenates it with the last three character at the start of the word
+        }
+        else return str // If it is less than 3 characters, will not apply any changes
+    }
+
+    console.log(right("Python")); //honPyt
+    console.log(right("JavaScript")); //iptJavaScr
+    console.log(right("Hi")); //Hi
+
+
+    //Exercise 4:
+    function angleType(num){
+        if (num > 0 && num < 90){
+            return "Acute Angle" //A number between 0 and 90 degrees returns acute angle
+        }
+        else if (num === 90){
+            return "Right Angle" //A number that is exactly 90 degrees returns right angle
+        }
+        else if (num === 180){
+            return "Straight Angle" //A number that is exactly 180 degrees returns straight angle
+        }
+        else if (num > 90 && num < 180){
+            return "Obtuse Angle" //A number between 90 and 180 degrees returns obtuse angle
+        }
+    }
+
+    console.log(angleType(47)) //Acute Angle
+    console.log(angleType(90)) //Right Angle
+    console.log(angleType(145)) //Straight Angle
+    console.log(angleType(180)) //Obtuse Angle
+
+
+
+</script>
+<body>
+    
+</body>
+</html>
