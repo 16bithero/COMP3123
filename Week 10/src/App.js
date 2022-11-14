@@ -15,7 +15,7 @@ export default function FormApp() {
         addressTwo: "",
         city: "",
         province: "",
-        zip: ""
+        postal: ""
     }
     var [data, setData] = useState(INITIAL_VALUE)
     var [newEmail, setEmail] = useState('')
@@ -86,7 +86,7 @@ export default function FormApp() {
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridState">
-                        <Form.Label>State</Form.Label>
+                        <Form.Label>Province</Form.Label>
                         <Form.Select name='province' onChange={onValueChanged}>
                             {
                                 provinces.map(province => (
@@ -97,8 +97,8 @@ export default function FormApp() {
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridZip">
-                        <Form.Label>Zip</Form.Label>
-                        <Form.Control name='zip' value={data.zip} onChange={event => onValueChanged(event)} />
+                        <Form.Label>Postal Code</Form.Label>
+                        <Form.Control name='Postal Code' value={data.postal} onChange={event => onValueChanged(event)} />
                     </Form.Group>
                 </Row>
 
